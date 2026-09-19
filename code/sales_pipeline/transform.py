@@ -236,7 +236,6 @@ def summarize_by_day(cleaned_data: list[dict]) -> list[dict]:
         totals[date]["units_sold"] += row["qty"]
         totals[date]["revenue"] += row["total_revenue"]
     return sorted(totals.values(), key=lambda entry: entry["date"])
-    pass
 
 
 def find_top_entry(summary: list[dict], field: str = "revenue") -> dict:
@@ -277,4 +276,3 @@ def find_top_entry(summary: list[dict], field: str = "revenue") -> dict:
         if entry[field] > top_entry[field]:
             top_entry = entry
     return top_entry
-    pass
